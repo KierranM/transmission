@@ -1,8 +1,6 @@
 FROM phusion/baseimage:0.9.16
 MAINTAINER Kierran McPherson <kierranm@gmail.com>
-
-# use phusion/baseimage init system
-CMD ["/sbin/my_init"]
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && apt-get install -y transmission-daemon
 
@@ -33,3 +31,6 @@ RUN chmod a+x /etc/my_init.d/config.sh
 RUN mkdir -p /etc/service/transmission
 ADD Assets/transmission.sh /etc/service/transmission/run
 RUN chmod a+x /etc/service/transmission/run
+
+# use phusion/baseimage init system
+CMD ["/sbin/my_init"]
