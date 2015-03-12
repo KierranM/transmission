@@ -30,6 +30,6 @@ ADD Assets/config.sh /etc/my_init.d/config.sh
 RUN chmod a+x /etc/my_init.d/config.sh
 
 # Set up the runit script
-RUN mkdir -p /etc/service/transmission
+RUN ["mkdir", "-p", "/etc/service/transmission"]
 ADD Assets/transmission.sh /etc/service/transmission/run
 RUN chmod a+x /etc/service/transmission/run
