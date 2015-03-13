@@ -21,6 +21,7 @@ It has been set up to use the following folders/mounts:
   docker run -d --name="transmission" \
     -v /path/to/all/transmission/stuff:/transmission \
     -p 9091:9091 \
+    -p 54321:54321 \
     kierranm/transmission
  ```
 
@@ -34,5 +35,6 @@ It has been set up to use the following folders/mounts:
     -e USERNAME="myusername" \
     -e PASSWORD="supersecret" \
     -p 9091:9091 \
+    -p 54321:54321
     kierranm/transmission
  ```

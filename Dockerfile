@@ -13,6 +13,7 @@ ENV TRANSMISSION_HOME /transmission/config
 
 # Expose the transmission port
 EXPOSE 9091
+EXPOSE 54321
 
 VOLUME /transmission/downloads
 VOLUME /transmission/watch
