@@ -6,11 +6,9 @@ expose the transmission web UI on port 9091.
 
 It has been set up to use the following folders/mounts:
  * /transmission -> The transmission home directory
- * /transmission/config -> The configuration folder, where the default config is saved
- * /transmission/downloads -> Where files will be downloaded to
- * /transmission/watch -> Where transmission will automatically detect torrent files and download them
- * /transmission/incomplete -> Where transmission will store files that aren't fully downloaded
 
+ This is where all of your config and downloads will be stored
+ 
  ##User Authentication
  The username and password are set to rpc_username and rpc_password by default,
  I highly recommend that you change these, the container will automatically substitute
@@ -25,16 +23,3 @@ It has been set up to use the following folders/mounts:
     kierranm/transmission
  ```
 
- Or if you prefer to use a more configured container:
- ``` bash
-  docker run -d --name="transmission" \
-    -v /path/to/downloads:/transmission/downloads \
-    -v /path/to/watch/dir:/transmission/watch \
-    -v /path/to/incomplete:/transmission/incomplete \
-    -v /path/to/config:/transmission/config \
-    -e USERNAME="myusername" \
-    -e PASSWORD="supersecret" \
-    -p 9091:9091 \
-    -p 54321:54321
-    kierranm/transmission
- ```

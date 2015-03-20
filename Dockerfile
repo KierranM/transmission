@@ -15,10 +15,8 @@ ENV TRANSMISSION_HOME /transmission/config
 EXPOSE 9091
 EXPOSE 54321
 
-VOLUME /transmission/downloads
-VOLUME /transmission/watch
-VOLUME /transmission/incomplete
-VOLUME /transmission/config
+# should contain the /config /downloads /incomplete and /watch directories
+VOLUME /transmission
 
 # copy across the default settings
 ADD Assets/settings.json /tmp/settings.json
